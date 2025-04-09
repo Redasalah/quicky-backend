@@ -1,0 +1,11 @@
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/BackendApplication.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/config/SecurityConfig.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/models/User.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/models/Role.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/repositories/UserRepository.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/Controllers/TestController.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/Controllers/AuthController.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/config/CorsConfig.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/services/UserService.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/Controllers/UserController.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/backend/config/DataInitializer.java
