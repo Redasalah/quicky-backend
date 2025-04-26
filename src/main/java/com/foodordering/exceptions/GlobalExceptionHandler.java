@@ -2,6 +2,8 @@
 package com.foodordering.exceptions;
 
 import com.foodordering.dtos.responses.ApiResponse;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.validation.FieldError;
@@ -14,15 +16,34 @@ import java.util.Map;
 
 @ControllerAdvice
 public class GlobalExceptionHandler {
+    private static final Logger logger = LoggerFactory.getLogger(GlobalExceptionHandler.class);
     
-    @ExceptionHandler(ResourceNotFoundException.class)
-    public ResponseEntity<ApiResponse> handleResourceNotFoundException(ResourceNotFoundException ex) {
-        return new ResponseEntity<>(new ApiResponse(false, ex.getMessage()), HttpStatus.NOT_FOUND);
-    }
-    
-    @ExceptionHandler(BadRequestException.class)
-    public ResponseEntity<ApiResponse> handleBadRequestException(BadRequestException ex) {
-        return new ResponseEntity<>(new ApiResponse(false, ex.getMessage()), HttpStatus.BAD_REQUEST);
+    @ExceptionHandler(Exception.class)
+    public ResponseEntity<ApiResponse> handleGenericException(Exception ex) {
+        // Log the full stack trace
+        logger.error("Unexpected error occurred", ex);
+        
+        // Extract detailed error information
+        String errorMessage = "An unexpected error occurred";
+        String detailedMessage = ex.getMessage();
+        
+        // Log additional context
+        logger.error("Exception class: {}", ex.getClass().getName());
+        logger.error("Detailed message: {}", detailedMessage);
+        
+        // Log cause if available
+        if (ex.getCause() != null) {
+            logger.error("Cause: {}", ex.getCause().getMessage());
+            logger.error("Cause class: {}", ex.getCause().getClass().getName());
+        }
+        
+        // Print full stack trace to console
+        ex.printStackTrace();
+        
+        return new ResponseEntity<>(
+            new ApiResponse(false, detailedMessage != null ? detailedMessage : errorMessage), 
+            HttpStatus.INTERNAL_SERVER_ERROR
+        );
     }
     
     @ExceptionHandler(MethodArgumentNotValidException.class)
@@ -32,12 +53,8 @@ public class GlobalExceptionHandler {
             String fieldName = ((FieldError) error).getField();
             String errorMessage = error.getDefaultMessage();
             errors.put(fieldName, errorMessage);
+            logger.error("Validation Error - Field: {}, Message: {}", fieldName, errorMessage);
         });
         return new ResponseEntity<>(errors, HttpStatus.BAD_REQUEST);
-    }
-    
-    @ExceptionHandler(Exception.class)
-    public ResponseEntity<ApiResponse> handleGenericException(Exception ex) {
-        return new ResponseEntity<>(new ApiResponse(false, "An unexpected error occurred"), HttpStatus.INTERNAL_SERVER_ERROR);
     }
 }

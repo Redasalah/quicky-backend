@@ -20,4 +20,9 @@ public class JwtConfig {
     public long getExpiration() {
         return expiration;
     }
+
+    // Optional: Add a method to validate secret length
+    public boolean isSecretValid() {
+        return secret != null && secret.length() >= 32;
+    }
 }

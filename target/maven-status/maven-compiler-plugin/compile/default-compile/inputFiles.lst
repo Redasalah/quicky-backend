@@ -1,9 +1,12 @@
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/controllers/AuthController.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/models/OrderStatus.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/models/OrderItem.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/dtos/responses/AuthResponse.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/dtos/requests/OrderRequest.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/controllers/PublicController.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/controllers/MenuItemController.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/models/User.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/dtos/responses/MenuItemDto.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/config/JwtConfig.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/dtos/responses/RestaurantResponse.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/models/Address.java
@@ -19,6 +22,7 @@
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/services/MenuItemService.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/Application.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/config/CorsConfig.java
+/Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/dtos/requests/MenuItemRequest.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/security/UserDetailsServiceImpl.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/services/UserService.java
 /Users/akr4m/Desktop/quicky-backend/src/main/java/com/foodordering/repositories/OrderRepository.java
